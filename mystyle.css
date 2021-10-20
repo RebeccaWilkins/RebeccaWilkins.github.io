@@ -1,0 +1,197 @@
+/*Style sheet for GEOM65 Assignment 2 - Personal Webpage*/
+
+/*set styles that apply to whole body*/
+body {
+    margin: 0;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+
+/*Assignment option: 3) Response design - banner text in units of viewport width, background image not absolute size*/
+
+/*set style for banner image at top of page - */
+/*hero image influences from:https://www.w3schools.com/howto/howto_css_hero_image.asp
+  changes to hero image code: no shadow gradient, positioning, height*/
+/*banner shadow ideas from https://www.w3schools.com/cssref/css3_pr_box-shadow.asp*/
+/*text shadow from https://www.w3schools.com/css/css3_shadows.asp*/
+div.banner {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('Images/TreesFenceDivider.jpg');
+    background-size: cover;
+    left: 0px;
+    top: 0px;
+    box-shadow: 0px 7px 7px #1c351e;
+    z-index: 1;
+    text-align: center;
+}
+
+/*make banner words centred and readable*/
+/* banner text influences from /*hero image influences from:https://www.w3schools.com/howto/howto_css_hero_image.asp*/
+div.bannertext p{
+    display: inline;
+    color:white;
+    text-shadow: 0px 0px 6px #000000;
+    font-size: 10vw;
+    text-align: center;
+    line-height: 200px;
+    top: 50%;
+}
+
+/*nav bar ideas from https://www.w3schools.com/css/css_navbar_horizontal.asp
+ changes: centred text, colour background, size changes, padding between links*/
+
+ /*styles that apply to entire nav bar - background colour, size, fixed position when browser is large*/
+nav{
+    width: 100%;
+    background-color: #4e9b3f;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    margin-left: 0;
+    position:fixed;
+    display: inline;
+    text-align: center;
+}
+
+/*remove bullet points from list in nav bar*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+    padding: 40px;
+    font-size: 14pt;
+    color: black;
+    font-weight: bolder;
+}
+
+/*make list items display side by side, put space between them, change colour and bold*/
+nav li {
+    display: inline;
+    padding: 40px;
+    font-size: 14pt;
+    color: black;
+    font-weight: bolder;
+}
+
+/*change link colour to black and get rid of underline*/
+nav a {
+    text-decoration: none;
+    color:black;
+}
+
+/*when mouse is over link, change link colour to white and put underline under it, so it looks more link-like*/
+nav a:hover{
+    color:white;
+    text-decoration: underline;
+}
+
+/*styling size of main content area*/
+main {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    min-height: 100%;
+}
+
+/*set text options for main content title*/
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2{
+    font-weight: bold;
+}
+
+/*bring main content lists closer to centre*/
+details {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+/*make dropdown list title appear beside arrow*/
+details summary h2 {
+    display: inline;
+}
+
+/*indent subtitle to be aligned with title, make text larger and bolder*/
+details .subtitle {
+    padding-left: 16px;
+    margin: 5px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+/*styling for contact info bar -  full width, green background colour, text aligned to centre*/
+/*make footer always visible when scrolling*/
+footer{
+    width: 100%;
+    background-color: #4e9b3f;
+    bottom: 0;
+    position:fixed;
+    margin:auto;
+    text-align: center;
+}
+
+/*contact info text size, colour, use a plain sans serif font*/
+footer p {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Assignment option: 3) Response design*- different screen sizes/
+/*responsive javascript code from: */
+/*https://www.w3schools.com/howto/howto_js_topnav_responsive.asp*/
+/*https://www.w3schools.com/css/css_rwd_images.asp*/
+/*changes: width and height requirements, what is changed by browser size*/
+
+/*When screen is wider than 1000 px, make banner text constant size*/
+@media screen and (min-width: 1000px) {
+    div.bannertext p{
+        font-size: 100px;
+    }
+}
+
+/* When the screen is less than 600 pixels wide, adjust banner and text*/
+@media screen and (max-width: 600px) {
+
+    div.banner {
+        height: 150px;
+    }
+
+    div.banner p{
+        display: block;
+        line-height: 10%;
+    }
+
+    nav {
+        position:fixed;
+        margin-top: -50px;
+    }
+
+    main {
+        margin-top: 200px;
+    }
+
+    details {
+        margin-left: 5%;
+        margin-right: 5%
+    }
+}
+
+/* When the screen is less than 600 pixels tall, make banner and nav bar position relative */
+@media screen and (max-height: 600px) {
+    div.banner, nav {
+        position:absolute;
+    }
+
+    main {
+        margin-top: 200px;
+    }
+}
